@@ -50,6 +50,11 @@ type limit struct {
 	offset int
 }
 
+type union struct {
+	unionType string
+	builder   *Builder
+}
+
 // Builder describes a SQL statement
 type Builder struct {
 	optype
@@ -69,6 +74,7 @@ type Builder struct {
 	orderBy    string
 	groupBy    string
 	having     string
+	unions     []union
 }
 
 // Dialect sets the db dialect of Builder.
